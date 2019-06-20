@@ -84,7 +84,7 @@ $(submitButton).on("click", function() {
     else if(answer1 === "Red"){
         correct++;
         console.log(correct);
-    } else; {
+    } else {
         incorrect++;
     }
 
