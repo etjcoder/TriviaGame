@@ -13,43 +13,52 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <!-- Added a link to our external stylesheet-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 
     <title>Trivia Game</title>
 </head>
 
 <body>
+    <div class=jumbotron>
     <h1>Fun Trivia Game!</h1>
     <br>
     <p>Answer the questions in the alotted time</p>
     <button id="start-button">Start Game</button>
     <br>
-    <div id="timer">Timer: </div>
-    <div class="questions">
+    <div>Timer: <span id="timer"></span></div>
+    </div>
+    
+    <div class="container" id="questions">
         
-        <div id="question-1">
-            <div id="options-1"></div>
+        <div class="row" id="q1">
+            <div class="col-6" id="question-1"></div>
+            <div class="col-6" id="options-1"></div>
         </div>
         
-        <div id="question-2">
-            <div id="options-2"></div>
+        <div class="row" id="q2">
+            <div class="col-6" id="question-2"></div>
+            <div class="col-6" id="options-2"></div>
         </div>
         
-        <div id="question-3">
-            <div id="options-3"></div>
+        <div class="row" id="q3">
+            <div class="col-6" id="question-3"></div>
+            <div class="col-6" id="options-3"></div>
         </div>
         
-        <div id="question-4">
-            <div id="options-4"></div>
+        <div class="row"id="q4">
+            <div class="col-6" id="question-4"></div>
+            <div class="col-6" id="options-4"></div>
         </div>
         
-        <div id="question-5">
-            <div id="options-5"></div>
+        <div class="row" id="q5">
+            <div class="col-6" id="question-5"></div>
+            <div class="col-6" id="options-5"></div>
         </div>
         
-        <div id="question-6">
-            <div id="options-6"></div>
+        <div class="row" id="q6">
+            <div class="col-6" id="question-6"></div>
+            <div class="col-6" id="options-6"></div>
         </div>
     
     </div>

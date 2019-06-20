@@ -12,7 +12,7 @@
 ///////////////Create global variables to match with Divs above here and functions below/////////////
 
 //Timer variable
-var timer = 60;
+var timer = 10;
 
 //Question 1-6 variables
 var question1 = "What color is an Apple?";
@@ -59,12 +59,40 @@ var unanswered = 0;
 //Start Game variable, responds to button click on start-button and initiates game function
 
 $(startButton).on("click", function() {
+    
+    //Upon click this will start your timer
     startTimer();
+    console.log("you've started the game!");
+
+    //Display the questions for your game
 });
 
 
 //Game function starts off by setting a time that when time=0 runs function endGame
 function startTimer(){
+    
+    //This will display the pre-set time in the timer div
+    // console.log("timer has started")
+    $("#timer").text(timer);
+    
+    //This will run a function to remove 1 second from the timer per second
+    setInterval(function() {
+        
+        //This will create a new variable which we will use to display the adjusted time
+        // console.log("minus 1");
+        var newTimer = timer--;
+        $("#timer").text(newTimer);
+       
+        //this will run when 
+        if(newTimer === 0) {
+            console.log("Your game has ended")
+            // newTimer = 10;
+
+            //Hide the Questions container
+
+            //Show the Results container
+        }
+    }, 1000);
 
 }
 
