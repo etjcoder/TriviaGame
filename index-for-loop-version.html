@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Added a link to our external stylesheet-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+    <title>Trivia Game</title>
+</head>
+
+<body>
+        <div class="jumbotron text-center">
+            <h1>Fun Trivia Game!</h1>
+            <br>
+            <p>Answer the questions in the alotted time</p>
+            <button id="start-button">Start Game</button>
+            <br>
+        </div>
+    
+        <div class="container" style="display: none" id="questions">
+    
+            <!-- This is where the TIMER is located -->
+            <div class="row bg-info" style="height: 50px; color: white">
+                <div class="col-5"></div>
+                <div class="col-2">
+                    <div class="text-center">Timer: <span id="timer"></span></div>
+                </div>
+                <div class="col-5"></div>
+            </div>
+            <br>
+    
+            <!-- This is where the QUESTIONS begin -->
+            <div class="row bg-primary" style="height: 100px; color: white" id="q1">
+                <!-- QUESTION 1 -->
+                <div class="col-6 bg-primary" id="question-1">What Color is an Apple?</div>
+                <div class="col-6 bg-warning" id="options-1">
+                    <!-- OPTIONS 1 -->
+                    <form id="Op-1">
+                        <input type="radio" name="choice1" value="Red"> Red
+                        <input type="radio" name="choice1" value="Blue"> Blue
+                        <input type="radio" name="choice1" value="Green"> Green
+                        <input type="radio" name="choice1" value="Purple"> Purple
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="row" style="height: 100px; color: white" id="q2">
+                <div class="col-6 bg-primary" id="question-2">What Color is a Banana?</div>
+                <div class="col-6 bg-warning" id="options-2">
+                    <!-- OPTIONS 2 -->
+                    <form id="Op-2">
+                        <input type="radio" name="choice2" value="Red"> Red
+                        <input type="radio" name="choice2" value="Blue"> Blue
+                        <input type="radio" name="choice2" value="Yellow"> Yellow
+                        <input type="radio" name="choice2" value="Purple"> Purple
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="row" style="height: 100px; color: white" id="q3">
+                <div class="col-6 bg-primary" id="question-3">What Color is a Blueberry?</div>
+                <div class="col-6 bg-warning" id="options-3">
+                    <!-- OPTIONS 3 -->
+                    <form id="Op-3">
+                        <input type="radio" name="choice3" value="Red"> Red
+                        <input type="radio" name="choice3" value="Blue"> Blue
+                        <input type="radio" name="choice3" value="Green"> Green
+                        <input type="radio" name="choice3" value="Purple"> Purple
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="row" style="height: 100px; color: white" id="q4">
+                <div class="col-6 bg-primary" id="question-4">What color is a Grape?</div>
+                <div class="col-6 bg-warning" id="options-4">
+                    <!-- OPTIONS 4 -->
+                    <form id="Op-4">
+                        <input type="radio" name="choice4" value="Red"> Red
+                        <input type="radio" name="choice4" value="Blue"> Blue
+                        <input type="radio" name="choice4" value="Green"> Green
+                        <input type="radio" name="choice4" value="Purple"> Purple
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="row" style="height: 100px; color: white" id="q5">
+                <div class="col-6 bg-primary" id="question-5">What color is a Tomato?</div>
+                <div class="col-6 bg-warning" id="options-5">
+                    <!-- OPTIONS 5 -->
+                    <form id="Op-5">
+                        <input type="radio" name="choice5" value="Red"> Red
+                        <input type="radio" name="choice5" value="Blue"> Blue
+                        <input type="radio" name="choice5" value="Green"> Green
+                        <input type="radio" name="choice5" value="Purple"> Purple
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="row" style="height: 100px; color: white" id="q6">
+                <div class="col-6 bg-primary" id="question-6">What color is an Avacado?</div>
+                <div class="col-6 bg-warning" id="options-6">
+                    <!-- OPTIONS 6 -->
+                    <form id="Op-6">
+                            <input type="radio" name="choice6" value="Red"> Red
+                            <input type="radio" name="choice6" value="Blue"> Blue
+                            <input type="radio" name="choice6" value="Green"> Green
+                            <input type="radio" name="choice6" value="Purple"> Purple
+                        </form>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-5"></div>
+                <div class="col-2">
+                    <button id="finish-game">Submit Answers!</button>
+                </div>
+                <div class="col-5"></div>
+            </div>
+        </div>
+        <br>
+        <div class="row bg-info text-center" style="height: 250px; display: none" id="results">
+            <br>
+            <div class="col-12 text-center" style="height: 50px">Correct Answers: <span id="correct-answers"></span></div>
+            <br>
+            <div class="col-12 text-center" style="height: 50px">Incorrect Answers: <span id="incorrect-answers"></span>
+            </div>
+            <br>
+            <div class="col-12 text-center" style="height: 50px">Unanswered Questions: <span id="unanswered-answers"></span>
+            </div>
+        </div>
+        <br>
+    
+    
+        <script src="assets/javascript/app-for-loop.js">
+        </script>
+    </body>
+
+</html>

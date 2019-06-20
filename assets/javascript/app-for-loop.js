@@ -56,6 +56,9 @@ var incorrect = 0;
 //# Unanswered variable
 var unanswered = 0;
 
+//Empty array of answers
+var guessedAnswers = [];
+var correctAnswers = ["Red", "Yellow", "Blue", "Purple", "Red", "Green"];
 
 
 //////////////////////Create Functions to play the game//////////////
@@ -77,81 +80,39 @@ $(submitButton).on("click", function() {
 
     var answer1 = $("input[name='choice1']:checked").val();
     console.log(answer1);
-
-    if (answer1 === "undefined"){
-        unanswered++;
-    }
-    else if(answer1 === "Red"){
-        correct++;
-        console.log(correct);
-    } else {
-        incorrect++;
-    }
-
+    guessedAnswers.push(answer1);
     var answer2 = $("input[name='choice2']:checked").val();
     console.log(answer2);
-
-    if (answer2 === "undefined"){
-        unanswered++;
-    }
-    else if(answer2 === "Yellow"){
-        correct++;
-        console.log(correct);
-    } else {
-        incorrect++;
-    }
-
+    guessedAnswers.push(answer2);
     var answer3 = $("input[name='choice3']:checked").val();
     console.log(answer3);
-
-    if (answer3 === "undefined"){
-        unanswered++;
-    }
-    else if(answer3 === "Blue"){
-        correct++;
-        console.log(correct);
-    } else {
-        incorrect++;
-    }
-
+    guessedAnswers.push(answer3);
     var answer4 = $("input[name='choice4']:checked").val();
     console.log(answer4);
-
-    if (answer4 === "undefined"){
-        unanswered++;
-    }
-    else if(answer4 === "Purple"){
-        correct++;
-        console.log(correct);
-    } else {
-        incorrect++;
-    }
-
+    guessedAnswers.push(answer4);
     var answer5 = $("input[name='choice5']:checked").val();
     console.log(answer5);
-
-    if (answer5 === "undefined"){
-        unanswered++;
-    }
-    else if(answer5 === "Red"){
-        correct++;
-        console.log(correct);
-    } else {
-        incorrect++;
-    }
-
+    guessedAnswers.push(answer5);
     var answer6 = $("input[name='choice6']:checked").val();
-    console.log(answer1);
+    console.log(answer6);
+    guessedAnswers.push(answer6);
 
-    if (answer6 === "undefined"){
+console.log(guessedAnswers);
+
+for(var i = 0; i < guessedAnswers.length; i++) {
+    if (guessedAnswers[i] === "undefined"){
         unanswered++;
     }
-    else if(answer6 === "Green"){
+    else if(guessedAnswers[i] === correctAnswers[i]){
         correct++;
         console.log(correct);
     } else {
         incorrect++;
     }
+};
+    
+
+    
 
 
     ////////////// FOR LOOP CODE ////////////
