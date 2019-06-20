@@ -73,6 +73,27 @@ $(startButton).on("click", function () {
 
 });
 
+$(submitButton).on("click", function() {
+
+    var answer1 = $("input[name='choice1']:checked").val();
+    console.log(answer1);
+
+    if (answer1 === "undefined"){
+        unanswered++;
+    }
+    else if(answer1 === "Red"){
+        correct++;
+        console.log(correct);
+    } else; {
+        incorrect++;
+    }
+
+
+    // console.log(correct);
+    $("#correct-answers").text(correct);
+    $("#incorrect-answers").text(incorrect);
+    $("#unanswered-answers").text(unanswered);
+});
 
 //Game function starts off by setting a time that when time=0 runs function endGame
 function startTimer() {
