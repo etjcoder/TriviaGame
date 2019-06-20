@@ -13,6 +13,7 @@
 
 //Timer variable
 var timer = 10;
+var newTimer;
 
 //Question 1-6 variables
 var question1 = "What color is an Apple?";
@@ -44,6 +45,8 @@ var startButton = $("#start-button");
 //Submit Button
 var submitButton = $("#finish-game");
 
+//Results block
+var resultsDiv = $("#results");
 //# Correct variable
 var correct = 0;
 
@@ -54,52 +57,57 @@ var incorrect = 0;
 var unanswered = 0;
 
 
+
 //////////////////////Create Functions to play the game//////////////
 
 //Start Game variable, responds to button click on start-button and initiates game function
 
-$(startButton).on("click", function() {
-    
+$(startButton).on("click", function () {
+
     //Upon click this will start your timer
     startTimer();
     console.log("you've started the game!");
 
     //Display the questions for your game
+    $("#questions").css('display', 'block');
+
 });
 
 
 //Game function starts off by setting a time that when time=0 runs function endGame
-function startTimer(){
-    
+function startTimer() {
+
     //This will display the pre-set time in the timer div
     // console.log("timer has started")
     $("#timer").text(timer);
-    
+
     //This will run a function to remove 1 second from the timer per second
-    setInterval(function() {
-        
+    setInterval(function () {
+
         //This will create a new variable which we will use to display the adjusted time
         // console.log("minus 1");
         var newTimer = timer--;
         $("#timer").text(newTimer);
-       
-        //this will run when 
-        if(newTimer === 0) {
+        if (newTimer === 0) {
             console.log("Your game has ended")
             // newTimer = 10;
 
             //Hide the Questions container
-
+            $("#questions").css('display', 'none');
             //Show the Results container
+            document.getElementById("results").style.display = "block";
         }
+
+
     }, 1000);
 
 }
 
 
+
     //Inside the functoin it will collect form data and then put the answer into a "chosen-option" variable
     //Push these options into an array called chosenArr
-    
+
         //Perhaps have answers in an array
         //Loop through array and compare chosen-option[i] to correct-answer[i] 
         //if option === undefined {unanswered++}, else if option ===  answer then correct++, else incorrect++, 
