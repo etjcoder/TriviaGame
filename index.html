@@ -20,103 +20,103 @@
 </head>
 
 <body>
-        <div class="jumbotron text-center">
-            <h1>Fun Trivia Game!</h1>
-            <br>
-            <p>Answer the questions in the alotted time</p>
-            <button id="start-button">Start Game</button>
-            <br>
-        </div>
-    
+    <div class="jumbotron text-center" id="top-body">
+        <h1>The Quiz about Jeopardy!</h1>
+        <br>
+        <h2>See how well you know the 2nd most famous game show in the world!</h2>
+        <button id="start-button">Start Game</button>
+        <br>
+    </div>
+    <div class="container" id="main-body">
         <div class="container" style="display: none" id="questions">
-    
+
             <!-- This is where the TIMER is located -->
-            <div class="row bg-info" style="height: 50px; color: white">
+            <div class="row" style="height: 50px; color: white">
                 <div class="col-5"></div>
                 <div class="col-2">
-                    <div class="text-center">Timer: <span id="timer"></span></div>
+                    <div class="text-center" id="timer">Timer:<span id="timer"></span></div>
                 </div>
                 <div class="col-5"></div>
             </div>
             <br>
-    
+
             <!-- This is where the QUESTIONS begin -->
-            <div class="row bg-primary" style="height: 100px; color: white" id="q1">
+            <div class="row" style="height: 100px; color: white" id="q1">
                 <!-- QUESTION 1 -->
-                <div class="col-6 bg-primary" id="question-1">What Color is an Apple?</div>
-                <div class="col-6 bg-warning" id="options-1">
+                <div class="col-6" id="question-1">How many times a day does Alex Trebek change his suit?</div>
+                <div class="col-6" id="options-1">
                     <!-- OPTIONS 1 -->
                     <form id="Op-1">
-                        <input type="radio" name="choice1" value="Red"> Red
-                        <input type="radio" name="choice1" value="Blue"> Blue
-                        <input type="radio" name="choice1" value="Green"> Green
-                        <input type="radio" name="choice1" value="Purple"> Purple
+                        <input type="radio" name="choice1" value="One"> One
+                        <input type="radio" name="choice1" value="Two"> Two
+                        <input type="radio" name="choice1" value="Five"> Five
+                        <input type="radio" name="choice1" value="Three"> Three
                     </form>
                 </div>
             </div>
             <br>
             <div class="row" style="height: 100px; color: white" id="q2">
-                <div class="col-6 bg-primary" id="question-2">What Color is a Banana?</div>
-                <div class="col-6 bg-warning" id="options-2">
+                <div class="col-6" id="question-2">Who is Alex Trebek's biggest fan?</div>
+                <div class="col-6" id="options-2">
                     <!-- OPTIONS 2 -->
                     <form id="Op-2">
-                        <input type="radio" name="choice2" value="Red"> Red
-                        <input type="radio" name="choice2" value="Blue"> Blue
-                        <input type="radio" name="choice2" value="Yellow"> Yellow
-                        <input type="radio" name="choice2" value="Purple"> Purple
+                        <input type="radio" name="choice2" value="Will Ferrel">Will Ferrel 
+                        <input type="radio" name="choice2" value="Arnold Schwarzenager"> Arnold Schwarzenager
+                        <input type="radio" name="choice2" value="Alex Trebek">Alex Trebeck 
+                        <input type="radio" name="choice2" value="Drew Carey"> Drew Carey
                     </form>
                 </div>
             </div>
             <br>
             <div class="row" style="height: 100px; color: white" id="q3">
-                <div class="col-6 bg-primary" id="question-3">What Color is a Blueberry?</div>
-                <div class="col-6 bg-warning" id="options-3">
+                <div class="col-6" id="question-3">What is the record for most consecutive games won?</div>
+                <div class="col-6" id="options-3">
                     <!-- OPTIONS 3 -->
                     <form id="Op-3">
-                        <input type="radio" name="choice3" value="Red"> Red
-                        <input type="radio" name="choice3" value="Blue"> Blue
-                        <input type="radio" name="choice3" value="Green"> Green
-                        <input type="radio" name="choice3" value="Purple"> Purple
+                        <input type="radio" name="choice3" value="104"> 104
+                        <input type="radio" name="choice3" value="74"> 74
+                        <input type="radio" name="choice3" value="83"> 83
+                        <input type="radio" name="choice3" value="68"> 68
                     </form>
                 </div>
             </div>
             <br>
             <div class="row" style="height: 100px; color: white" id="q4">
-                <div class="col-6 bg-primary" id="question-4">What color is a Grape?</div>
-                <div class="col-6 bg-warning" id="options-4">
+                <div class="col-6" id="question-4">Which Olympics did Alex Trebeck run with the Olympic Torch?</div>
+                <div class="col-6" id="options-4">
                     <!-- OPTIONS 4 -->
                     <form id="Op-4">
-                        <input type="radio" name="choice4" value="Red"> Red
-                        <input type="radio" name="choice4" value="Blue"> Blue
-                        <input type="radio" name="choice4" value="Green"> Green
-                        <input type="radio" name="choice4" value="Purple"> Purple
+                        <input type="radio" name="choice4" value="2004"> 2004 
+                        <input type="radio" name="choice4" value="1988"> 1988
+                        <input type="radio" name="choice4" value="1992"> 1992
+                        <input type="radio" name="choice4" value="1996"> 1996
                     </form>
                 </div>
             </div>
             <br>
             <div class="row" style="height: 100px; color: white" id="q5">
-                <div class="col-6 bg-primary" id="question-5">What color is a Tomato?</div>
-                <div class="col-6 bg-warning" id="options-5">
+                <div class="col-6" id="question-5">In what year did Alex Trebek shave his popular mustache?</div>
+                <div class="col-6" id="options-5">
                     <!-- OPTIONS 5 -->
                     <form id="Op-5">
-                        <input type="radio" name="choice5" value="Red"> Red
-                        <input type="radio" name="choice5" value="Blue"> Blue
-                        <input type="radio" name="choice5" value="Green"> Green
-                        <input type="radio" name="choice5" value="Purple"> Purple
+                        <input type="radio" name="choice5" value="2001"> 2001
+                        <input type="radio" name="choice5" value="2007"> 2007
+                        <input type="radio" name="choice5" value="He never had a mustache"> He never had a mustache
+                        <input type="radio" name="choice5" value="He still has a mustache"> He still has a mustache
                     </form>
                 </div>
             </div>
             <br>
             <div class="row" style="height: 100px; color: white" id="q6">
-                <div class="col-6 bg-primary" id="question-6">What color is an Avacado?</div>
-                <div class="col-6 bg-warning" id="options-6">
+                <div class="col-6" id="question-6">How many millions of viewers does Jeopardy get each week?</div>
+                <div class="col-6" id="options-6">
                     <!-- OPTIONS 6 -->
                     <form id="Op-6">
-                            <input type="radio" name="choice6" value="Red"> Red
-                            <input type="radio" name="choice6" value="Blue"> Blue
-                            <input type="radio" name="choice6" value="Green"> Green
-                            <input type="radio" name="choice6" value="Purple"> Purple
-                        </form>
+                        <input type="radio" name="choice6" value="84 million"> 84 million
+                        <input type="radio" name="choice6" value="92 million"> 92 million
+                        <input type="radio" name="choice6" value="102 million"> 102 million
+                        <input type="radio" name="choice6" value="25 million"> 25 million
+                    </form>
                 </div>
             </div>
             <br>
@@ -129,21 +129,24 @@
             </div>
         </div>
         <br>
-        <div class="row bg-info text-center" style="height: 250px; display: none" id="results">
+        <div class="row text-center" style="height: 250px; display: none" id="results">
             <br>
-            <div class="col-12 text-center" style="height: 50px">Correct Answers: <span id="correct-answers"></span></div>
+            <div class="col-12 text-center" style="height: 50px">Correct Answers: <span id="correct-answers"></span>
+            </div>
             <br>
             <div class="col-12 text-center" style="height: 50px">Incorrect Answers: <span id="incorrect-answers"></span>
             </div>
             <br>
-            <div class="col-12 text-center" style="height: 50px">Unanswered Questions: <span id="unanswered-answers"></span>
+            <div class="col-12 text-center" style="height: 50px">Unanswered Questions: <span
+                    id="unanswered-answers"></span>
             </div>
         </div>
         <br>
-    
-    
-        <script src="assets/javascript/app.js">
-        </script>
-    </body>
+    </div>
+
+
+    <script src="assets/javascript/app.js">
+    </script>
+</body>
 
 </html>

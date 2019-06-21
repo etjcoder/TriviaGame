@@ -1,0 +1,24 @@
+#top-body {
+    background-image: url("https://www.myjewishlearning.com/wp-content/uploads/2015/10/12015022_737439893029328_2472940906435926534_o-e1444245814355.jpg");
+    color: white;
+    background-size: auto;
+}
+
+body {
+    height: 1000px;
+    background-image: url("https://wallpapercave.com/wp/wp4284367.jpg");
+    background-size: auto;
+}
+
+#main-body {
+    margin-top: 200px;
+    color: white;
+    background-image: url("https://i.ytimg.com/vi/XIMLoLxmTDw/hqdefault.jpg");
+}
+
+#timer {
+    font-size: 24px;
+    background: lightblue;
+    width: 100%;
+    color: white;
+}

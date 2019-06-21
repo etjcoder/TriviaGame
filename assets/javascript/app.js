@@ -9,10 +9,9 @@
 // * Don't forget to include a countdown timer.
 
 /////////////////LEFT TO DO 6-20-2019/////////////////
-// 1.) Need to add the answer tracking/ recording code to the same function that triggers when 0 occurss
-// 2.) Need to create creative questions
-// 3.) Need to design website better
-// 4.) Need to make an endgame function to run 
+// 1.) Need to create creative questions
+// 2.) Need to design website better
+// 3.) Need to make a retake quiz game
 
 
 
@@ -21,7 +20,7 @@
 ///////////////Create global variables to match with Divs above here and functions below/////////////
 
 //Timer variable
-var timer = 10;
+var timer = 30;
 var newTimer;
 
 //Question 1-6 variables
@@ -67,7 +66,7 @@ var unanswered = 0;
 
 //Empty array of answers
 var guessedAnswers = [];
-var correctAnswers = ["Red", "Yellow", "Blue", "Purple", "Red", "Green"];
+var correctAnswers = ["Five", "Alex Trebeck", "74", "1996", "2001", "25 million"];
 var executed = false;
 var startClicked = false;
 //////////////////////Create Functions to play the game//////////////
