@@ -32,7 +32,7 @@ var unanswered = 0;
 
 //Empty array of answers
 var guessedAnswers = [];
-var correctAnswers = ["Five", "Alex Trebeck", "74", "1996", "2001", "25 million"];
+var correctAnswers = ["Five", "Alex Trebek", "74", "1996", "2001", "25 million"];
 
 //These are preset variables to not let functions run more than once
 var executed = false;
@@ -44,7 +44,7 @@ $(startButton).on("click", function () {
     
     //A If/Then statement to determine if the startButton has already been clicked
     if(startClicked === false) {
-
+    $('audio#jeopardy-song')[0].play();
     //Upon click this will start your timer
     startTimer();
     console.log("you've started the game!");
