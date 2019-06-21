@@ -1,13 +1,3 @@
-// * You'll create a trivia form with multiple choice or true/false options (your choice).
-
-// * The player will have a limited amount of time to finish the quiz. 
-
-//   * The game ends when the time runs out. The page will reveal the number of questions that players answer correctly and incorrectly.
-
-// * Don't let the player pick more than one answer per question.
-
-// * Don't forget to include a countdown timer.
-
 /////////////////LEFT TO DO 6-20-2019/////////////////
 // 1.) Need to create creative questions
 // 2.) Need to design website better
@@ -22,30 +12,6 @@
 //Timer variable
 var timer = 30;
 var newTimer;
-
-//Question 1-6 variables
-var question1 = "What color is an Apple?";
-var question2 = "";
-var question3 = "";
-var question4 = "";
-var question5 = "";
-var question6 = "";
-
-//Options 1-6 variables
-var option1 = ["blue", "red", "orange", "purple"];
-var option2 = "";
-var option3 = "";
-var option4 = "";
-var option5 = "";
-var option6 = "";
-
-//Answers 1-6 variables
-var answer1 = "red";
-var answer2 = "";
-var answer3 = "";
-var answer4 = "";
-var answer5 = "";
-var answer6 = "";
 
 //Start Button
 var startButton = $("#start-button");
@@ -67,35 +33,47 @@ var unanswered = 0;
 //Empty array of answers
 var guessedAnswers = [];
 var correctAnswers = ["Five", "Alex Trebeck", "74", "1996", "2001", "25 million"];
+
+//These are preset variables to not let functions run more than once
 var executed = false;
 var startClicked = false;
 //////////////////////Create Functions to play the game//////////////
 
 //Start Game variable, responds to button click on start-button and initiates game function
-
 $(startButton).on("click", function () {
+    
+    //A If/Then statement to determine if the startButton has already been clicked
     if(startClicked === false) {
+
     //Upon click this will start your timer
     startTimer();
     console.log("you've started the game!");
 
     //Display the questions for your game
     $("#questions").css('display', 'block');
+
+    //Sets startClicked to true so you can't activate this function again
     startClicked = true;
     }
 });
 
+//This will submit your answers before the timer hits 0.
 $(submitButton).on("click", function () {
     timer = 0;
     answerChecker();
 
 });
 
+
+//This is the function that will evaluate your answers compared to the correct answers
 function answerChecker() {
+    // This will see if this answerChecker has been called yet
     if (executed === false) {
 
+        //This sets variables "answer(n)" to the value submitted via the designated input
         var answer1 = $("input[name='choice1']:checked").val();
             console.log(answer1);
+            //This pushes the user's chosen answer into an empty "guessAnswers" array.
             guessedAnswers.push(answer1);
         var answer2 = $("input[name='choice2']:checked").val();
             console.log(answer2);
@@ -115,9 +93,11 @@ function answerChecker() {
 
             console.log(guessedAnswers);
 
+        //This will run a loop to compare the newly completed guessedAnswers array to the preset correctAnswers array
         for (var i = 0; i < guessedAnswers.length; i++) {
             guessedAnswers[i];
             
+            //if the answer is unanswered it will display undefined. undefined does not come up as a string so we had to use the boolean
             if (guessedAnswers[i] === undefined) {
                 unanswered++;
                 console.log("Unanswered: " + unanswered);
@@ -131,59 +111,44 @@ function answerChecker() {
             }
 
         }
+        //This will push the increments correct/incorrect/unanswered variables into the global variables above and push it to the html
         $("#correct-answers").text(correct);
         $("#incorrect-answers").text(incorrect);
         $("#unanswered-answers").text(unanswered);
+
+        //This will prevent us from being able to re-run the function
         executed = true;
     }
 };
 
 
+//Game function starts off by displaying the time in the window. Once the timer is displayed it is incremented by "--" every 1000 milliseconds.
+//When time=0 we will run the answerChecker function which ends the quiz.
 
-
-////////////// FOR LOOP CODE ////////////
-
-
-//     var answers = [];
-// console.log(answers)
-//     for (var i = 0; i < 5; i++) {
-//         answers[i] = $("input[name='choice1']:checked").val();
-//         answers.push(answers[i]);
-//     }
-//  console.log(answers);
-
-/////////// THIS WILL LOG RIGHT OR WRONG ANSWERS
-
-// console.log(correct);
-
-//Game function starts off by setting a time that when time=0 runs function endGame
 function startTimer() {
-
-    //This will display the pre-set time in the timer div
-    // console.log("timer has started")
+    //This will display the pre-set time variable in the html timer div
     $("#timer").text(timer);
 
     //This will run a function to remove 1 second from the timer per second
     setInterval(function () {
-
-        //This will create a new variable which we will use to display the adjusted time
-        // console.log("minus 1");
+        //We will create a new variable which we will use to display the adjusted time by incrementing that down and constantly updating the div
         var newTimer = timer--;
         $("#timer").text(newTimer);
+        
+        //This checks if the newTimer variable = 0, and when it does it will end the game
         if (newTimer === 0) {
+            
+            //This was used for testing purposes
             console.log("Your game has ended")
-            // newTimer = 10;
 
-            //Hide the Questions container
+            //This will hide the previously summoned questions container
             $("#questions").css('display', 'none');
-            //Show the Results container
+
+            //This will show the previously hidden results container
             document.getElementById("results").style.display = "block";
 
             //Runs the result checker function
             answerChecker();
         }
-
-
     }, 1000);
-
 }

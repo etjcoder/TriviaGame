@@ -16,7 +16,7 @@ body {
     background-image: url("https://i.ytimg.com/vi/XIMLoLxmTDw/hqdefault.jpg");
 }
 
-#timer {
+#timer-div {
     font-size: 24px;
     background: lightblue;
     width: 100%;
