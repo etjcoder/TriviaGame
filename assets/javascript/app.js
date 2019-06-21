@@ -68,63 +68,81 @@ var unanswered = 0;
 //Empty array of answers
 var guessedAnswers = [];
 var correctAnswers = ["Red", "Yellow", "Blue", "Purple", "Red", "Green"];
-
-
+var executed = false;
+var startClicked = false;
 //////////////////////Create Functions to play the game//////////////
 
 //Start Game variable, responds to button click on start-button and initiates game function
 
 $(startButton).on("click", function () {
-
+    if(startClicked === false) {
     //Upon click this will start your timer
     startTimer();
     console.log("you've started the game!");
 
     //Display the questions for your game
     $("#questions").css('display', 'block');
+    startClicked = true;
+    }
+});
+
+$(submitButton).on("click", function () {
+    timer = 0;
+    answerChecker();
 
 });
 
-$(submitButton).on("click", function() {
+function answerChecker() {
+    if (executed === false) {
 
-    var answer1 = $("input[name='choice1']:checked").val();
-    console.log(answer1);
-    guessedAnswers.push(answer1);
-    var answer2 = $("input[name='choice2']:checked").val();
-    console.log(answer2);
-    guessedAnswers.push(answer2);
-    var answer3 = $("input[name='choice3']:checked").val();
-    console.log(answer3);
-    guessedAnswers.push(answer3);
-    var answer4 = $("input[name='choice4']:checked").val();
-    console.log(answer4);
-    guessedAnswers.push(answer4);
-    var answer5 = $("input[name='choice5']:checked").val();
-    console.log(answer5);
-    guessedAnswers.push(answer5);
-    var answer6 = $("input[name='choice6']:checked").val();
-    console.log(answer6);
-    guessedAnswers.push(answer6);
+        var answer1 = $("input[name='choice1']:checked").val();
+            console.log(answer1);
+            guessedAnswers.push(answer1);
+        var answer2 = $("input[name='choice2']:checked").val();
+            console.log(answer2);
+            guessedAnswers.push(answer2);
+        var answer3 = $("input[name='choice3']:checked").val();
+            console.log(answer3);
+            guessedAnswers.push(answer3);
+        var answer4 = $("input[name='choice4']:checked").val();
+            console.log(answer4);
+            guessedAnswers.push(answer4);
+        var answer5 = $("input[name='choice5']:checked").val();
+            console.log(answer5);
+            guessedAnswers.push(answer5);
+        var answer6 = $("input[name='choice6']:checked").val();
+            console.log(answer6);
+            guessedAnswers.push(answer6);
 
-console.log(guessedAnswers);
+            console.log(guessedAnswers);
 
-for(var i = 0; i < guessedAnswers.length; i++) {
-    if (guessedAnswers[i] === "undefined"){
-        unanswered++;
-    }
-    else if(guessedAnswers[i] === correctAnswers[i]){
-        correct++;
-        console.log(correct);
-    } else {
-        incorrect++;
+        for (var i = 0; i < guessedAnswers.length; i++) {
+            guessedAnswers[i];
+            
+            if (guessedAnswers[i] === undefined) {
+                unanswered++;
+                console.log("Unanswered: " + unanswered);
+            }
+            else if (guessedAnswers[i] === correctAnswers[i]) {
+                correct++;
+                console.log("Correct: " + correct);
+            } else {
+                incorrect++;
+                console.log("Incorrect: " + incorrect);
+            }
+
+        }
+        $("#correct-answers").text(correct);
+        $("#incorrect-answers").text(incorrect);
+        $("#unanswered-answers").text(unanswered);
+        executed = true;
     }
 };
-    
-
-    
 
 
-    ////////////// FOR LOOP CODE ////////////
+
+
+////////////// FOR LOOP CODE ////////////
 
 
 //     var answers = [];
@@ -135,13 +153,9 @@ for(var i = 0; i < guessedAnswers.length; i++) {
 //     }
 //  console.log(answers);
 
-    /////////// THIS WILL LOG RIGHT OR WRONG ANSWERS
+/////////// THIS WILL LOG RIGHT OR WRONG ANSWERS
 
-    // console.log(correct);
-    $("#correct-answers").text(correct);
-    $("#incorrect-answers").text(incorrect);
-    $("#unanswered-answers").text(unanswered);
-});
+// console.log(correct);
 
 //Game function starts off by setting a time that when time=0 runs function endGame
 function startTimer() {
@@ -165,6 +179,9 @@ function startTimer() {
             $("#questions").css('display', 'none');
             //Show the Results container
             document.getElementById("results").style.display = "block";
+
+            //Runs the result checker function
+            answerChecker();
         }
 
 
